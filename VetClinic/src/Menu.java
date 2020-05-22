@@ -5,12 +5,19 @@ import animal.AnimalList;
 
 public class Menu {
     
-	 public static void MenuOptions() {
+	 private static Scanner sc3;
+	private static Scanner sc4;
+	private static Scanner sc2;
+	private static Scanner sc;
+
+
+	public static void MenuOptions() {
 	        System.out.println("Veterinary Clinic Menu");
 	        System.out.println("Please Select one of the options bellow using the number given");
 	        System.out.println("1 - Admin Staff");
 	        System.out.println("2 - Medical Staff");
 	        System.out.println("3 - Animals");
+	        System.out.println("4 - To check the Veterinarian list of waiting");
 	        System.out.println("0 - To leave");
 	        System.out.println("Option:");
 	    }
@@ -27,11 +34,12 @@ public class Menu {
 	        System.out.println("3 - IT Support");
 	        System.out.println("4 - Manager");
 	        System.out.println("5 - Receptionist");
-	        System.out.println("6 - All Medical Staff");
+	        System.out.println("6 - All Administrative Staff");
+	        System.out.println("7 - Search by Staff name");
 	        System.out.println("0 - To leave");
 	        System.out.println("Option:");
 	        
-	        Scanner sc3 = new Scanner(System.in);
+	        sc3 = new Scanner(System.in);
 	            int option3 = sc3.nextInt();
 	            
 	            switch(option3){
@@ -68,6 +76,12 @@ public class Menu {
 		     			
 	               break;
 	               
+	            case 7:
+	    			
+	            	AdminStaffList search = new AdminStaffList();
+	            	search.SearchAll();
+		     			
+	               break;
 	            default:
 	                System.out.println("Invalid Option");
 	                AdminStaff();
@@ -91,7 +105,7 @@ public class Menu {
 	        System.out.println("0 - To leave");
 	        System.out.println("Option:");
 	        
-	        Scanner sc4 = new Scanner(System.in);
+	        sc4 = new Scanner(System.in);
 	            int option4 = sc4.nextInt();
 	            
 	            switch(option4){
@@ -150,11 +164,11 @@ public class Menu {
 	        System.out.println("7 - parrot");
 	        System.out.println("8 - rabbit");
 	        System.out.println("9 - snake");
-	        System.out.println("10 - Search animal by name");
+	        System.out.println("10 - Show all animals");
 	        System.out.println("0 - To leave");
 	        System.out.println("Option:");
 	        
-	        Scanner sc2 = new Scanner(System.in);
+	        sc2 = new Scanner(System.in);
 	            int option2 = sc2.nextInt();
 	            
 	            switch(option2){
@@ -220,7 +234,7 @@ public class Menu {
 
     public static void main(String[] args) {
     	  int option;
-	        Scanner sc = new Scanner(System.in);
+	        sc = new Scanner(System.in);
 	        
 	        do{
 	            MenuOptions();
@@ -237,6 +251,11 @@ public class Menu {
 	                
 	            case 3:
 	                Animals();
+	                break;
+	                
+	            case 4:
+	                MedServ serv = new MedServ();
+	                serv.Queue();
 	                break;
 	          
 	            default:

@@ -2,6 +2,7 @@ package Staff;
 
 import java.util.ArrayList;
 
+
 public class AdminStaffList {
 	// protected String animalData;
 	private String firstName;
@@ -27,9 +28,17 @@ public class AdminStaffList {
 	ArrayList<ClinicStaff> it = new ArrayList<ClinicStaff>();//it support
 	ArrayList<ClinicStaff> m = new ArrayList<ClinicStaff>();// manager
 	ArrayList<ClinicStaff> r = new ArrayList<ClinicStaff>();// receptionist
+	ArrayList<ClinicStaff> all = new ArrayList<ClinicStaff>();// all staffs
+
 
 	// Instance of the class StaffDataGenerator
 	StaffDataGenerator sdg = new StaffDataGenerator();
+	
+	// Instance of the class StaffTaskGenerator
+	StaffTaskGenerator stg = new StaffTaskGenerator();
+	
+	//Instance of the class ItTaskGenerator
+	ItTaskGenerator itg = new ItTaskGenerator();
 
 	// Instances of the inner classes of the class Medical
 	Admin.Manager manager;
@@ -51,8 +60,9 @@ public class AdminStaffList {
 			m.add(manager);
 			
 		}
-		for (ClinicStaff manager : m) {
-			System.out.println(manager);
+		for (ClinicStaff manager: m) {
+			String adminTask = stg.getRandomData();
+			System.out.println(manager + " " + adminTask);
 		}}
 
 	public void generateAssistant() {
@@ -68,7 +78,8 @@ public class AdminStaffList {
 			a.add(assistant);
 		}
 		for (ClinicStaff a : a) {
-			System.out.println(a);
+			String adminTask = stg.getRandomData();
+			System.out.println(a + " " + adminTask);
 		}
 	}
 
@@ -85,7 +96,8 @@ public class AdminStaffList {
 			r.add(receptionist);
 		}
 		for (ClinicStaff recep : r) {
-			System.out.println(recep);
+			String adminTask = stg.getRandomData();
+			System.out.println(recep + " " + adminTask);
 		}
 	}
 	public void generateCS() {
@@ -101,7 +113,8 @@ public class AdminStaffList {
 			cs.add(customServ);
 		}
 		for (ClinicStaff cs : cs) {
-			System.out.println(cs);
+			String adminTask = stg.getRandomData();
+			System.out.println(cs + " " + adminTask);
 		}}
 
 	public void generateIt() {
@@ -118,15 +131,38 @@ public class AdminStaffList {
 		}
 		
 		for (ClinicStaff it : it) {
-			System.out.println(it);
+			String itTask = itg.getRandomData();
+			System.out.println(it + " " + itTask);
 		}}
 
 	public void generateAdminStaff() {
-		generateAssistant();
+		generateAssistant() ;
 		generateCS();
 		generateIt();
-        generateManager();
+		generateManager();
         generateReceptionist();
-		}
 	}
+	
+	public void SearchAll() {
+		/// Loop to generate all
+					
+			all.addAll(it);
+			all.addAll(a);
+			all.addAll(cs); 
+			all.addAll(m);
+			all.addAll(r); 
+        
+			for (ClinicStaff all : all) {
+				
+				System.out.println(all);
+			
+			
+			
+		}	
+}
+	
+		}
+	
+
+	
 

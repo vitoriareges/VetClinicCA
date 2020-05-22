@@ -61,6 +61,9 @@ public class MedicalStaffList {
 			System.out.println(vet);
 		}
 		}
+	public ArrayList <ClinicStaff> getV() {
+		return v;
+	}
 	
 	public void generateTVet() {
 		/// Loop to generate Trainee Veterinarians
