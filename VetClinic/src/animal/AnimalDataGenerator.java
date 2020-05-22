@@ -3,10 +3,11 @@ package animal;
 import java.util.Random;
 
 public class AnimalDataGenerator {
-
-	 private String[] names = { "Chico", "Bambi", "Guido", "Mimi", "Black", "White", "Suzy", "Willy", "Suzy", "Hopper","Marble","Fluffy", "Rex", "Tido" }; //14
+// Names and conditions based on most popular name for animals on google
+		private String[] names = { "Chico", "Bambi", "Guido", "Mimi", "Black", "White", "Suzy", "Willy", "Suzy", "Hopper","Marble","Fluffy", "Rex", "Tido" }; //14
 	    private String[] conditions = { "Arthritis", "Cancer", "Dental Disease", "Diabetes", "Distemper", "Ear Mites", "Epilepsy", "Bloat", "Worm", "Rabies","Parvovirus", "Acne" };//12
-	    private int ages = 20;
+// Medical conditions based on most recurrent medical conditions for mammal pet animals	    
+	    private int ages = 10; // Consider it as months for rodents
 	    
 	    public AnimalDataGenerator() {
 	    	

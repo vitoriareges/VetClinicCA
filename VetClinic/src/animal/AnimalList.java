@@ -1,8 +1,6 @@
 package animal;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
 public class AnimalList{
 	
 		//protected String animalData;
@@ -10,8 +8,8 @@ public class AnimalList{
 		protected String condition;
 		protected int age;
 		
-		//Number of animals to be generated
-		private int numOfAnimals = 100; //(1000) This can change according to user input
+		//Number of animals to be generated ( percent based on approximate average of type of animal in a vet clinic)
+		private int numOfAnimals = 1000; //(100) This can change according to user input
 		private int numDogs = (int) (numOfAnimals*0.45);
 		private int numCats = (int) (numOfAnimals*0.20);
 		private int numRabbits = (int) (numOfAnimals*.05);
@@ -64,7 +62,12 @@ public class AnimalList{
 	  for (PetAnimals dog : d) {
 		  System.out.println(dog);
 	  }
+	  
 	  }
+	  
+	  public ArrayList <PetAnimals> getD() {
+			return d;
+		}
 	  public void generateCat() { 
 	  ///Loop to generate cats
 	  for (int i=0; i<numCats; i++ ) {
@@ -174,6 +177,7 @@ public class AnimalList{
 		  System.out.println(parrot);
 	  }}
 	  
+	    
 	  public void generateAnimals () { 
 	 generateParrot();
 	 generateCat();
